@@ -9,6 +9,15 @@ Built with:
 - **[shadcn/ui](https://ui.shadcn.com/)** - Beautifully designed, accessible components
 - **[React Router](https://reactrouter.com/)** - Declarative routing for React
 
+## Scaffolding a New Project
+
+You can instantly scaffold a new project anywhere on your computer using `bun create`:
+
+```bash
+bun create @tsxr1ck/groundwork my-new-app
+```
+*(Alternatively, you can run `bunx @tsxr1ck/create-groundwork my-new-app` or install the CLI globally via `bun install -g @tsxr1ck/create-groundwork`)*
+
 ## Getting Started
 
 First, ensure you have [Bun](https://bun.sh/) installed.

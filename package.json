@@ -1,8 +1,10 @@
 {
-  "name": "groundwork",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@tsxr1ck/create-groundwork",
+  "version": "0.1.2",
   "type": "module",
+  "bin": {
+    "create-groundwork": "./bin/cli.js"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

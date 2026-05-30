@@ -22,7 +22,7 @@ if (fs.existsSync(targetPath)) {
 console.log(`Scaffolding Groundwork boilerplate into ${targetDirName}...`);
 fs.mkdirSync(targetPath, { recursive: true });
 
-const excludeList = ['node_modules', '.git', 'bin', 'dist', '.npmignore', 'bun.lock'];
+const excludeList = ['node_modules', '.git', 'bin', 'dist', '.npmignore', 'bun.lock', 'README.md'];
 
 function copyRecursiveSync(src, dest) {
   const exists = fs.existsSync(src);
@@ -50,6 +50,7 @@ copyRecursiveSync(sourcePath, targetPath);
 
 // Clean up package.json
 const pkgPath = path.join(targetPath, 'package.json');
+const projectName = path.basename(targetPath).toLowerCase().replace(/[^a-z0-9-_]/g, '-');
 if (fs.existsSync(pkgPath)) {
   const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
   
@@ -57,16 +58,45 @@ if (fs.existsSync(pkgPath)) {
   delete pkg.bin;
   delete pkg.files;
   
-  // Update name and version using the absolute folder name
-  const projectName = path.basename(targetPath).toLowerCase().replace(/[^a-z0-9-_]/g, '-');
   pkg.name = projectName;
   pkg.version = '0.0.0';
   
   fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
 }
 
+// Write a clean project README
+const readme = `# ${projectName}
+
+Built with [Groundwork](https://github.com/tsxr1ck/groundwork).
+
+## Getting Started
+
+\`\`\`bash
+bun install
+bunx --bun vite
+\`\`\`
+
+## Commands
+
+| Command | Description |
+| --- | --- |
+| \`bunx --bun vite\` | Start the dev server |
+| \`bun run build\` | Build for production |
+| \`bun run preview\` | Preview the production build |
+| \`bun run lint\` | Run ESLint |
+
+## Adding Components
+
+\`\`\`bash
+bunx --bun shadcn@latest add [component-name]
+\`\`\`
+`;
+fs.writeFileSync(path.join(targetPath, 'README.md'), readme);
+
 console.log(`\nSuccess! Groundwork is ready in ${targetDirName === '.' ? 'the current directory' : targetDirName}.`);
 console.log(`\nNext steps:`);
-console.log(`  cd ${targetDirName}`);
+if (targetDirName !== '.') {
+  console.log(`  cd ${targetDirName}`);
+}
 console.log(`  bun install`);
 console.log(`  bunx --bun vite\n`);

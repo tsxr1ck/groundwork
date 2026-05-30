@@ -36,6 +36,20 @@ bun create @tsxr1ck/groundwork .
 | [Tailwind CSS v4](https://tailwindcss.com/) | Utility-first styling |
 | [shadcn/ui](https://ui.shadcn.com/) | Copy-paste accessible components |
 | [React Router](https://reactrouter.com/) | Client-side routing |
+| [Lucide React](https://lucide.dev/) | Beautiful icons |
+
+## Design System
+
+This boilerplate ships with a **Material Design 3 + Apple HIG** hybrid aesthetic:
+
+- **M3 Surface Roles** — Off-white backgrounds (`oklch(0.985 0 0)`) with pure white cards for proper elevation contrast
+- **Apple Squircle Radius** — `--radius: 1rem` applied globally for soft, continuous curves
+- **Glassmorphism** — Reusable frosted glass utility pattern (`bg-background/60 backdrop-blur-2xl border border-border/50`)
+- **Dark Mode** — Full `.dark` class toggling with persistence to `localStorage`
+- **Responsive Press** — `active:scale-[0.98]` on buttons for iOS-scale physical feedback
+- **Vibrancy** — Translucent surfaces with `backdrop-blur` and subtle `shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]` inner glow on primary actions
+
+Toggle dark mode via the Sun/Moon icon in the top-right corner.
 
 ---
 
@@ -44,14 +58,17 @@ bun create @tsxr1ck/groundwork .
 ```
 ├── bin/cli.js              # CLI scaffolding script
 ├── src/
-│   ├── components/ui/      # shadcn/ui components (Button, etc.)
+│   ├── components/
+│   │   ├── ui/             # shadcn/ui components (Button, etc.)
+│   │   ├── theme-provider.tsx  # Dark mode context & persistence
+│   │   └── theme-toggle.tsx    # Light/dark toggle button
 │   ├── lib/                # Utilities (cn helper)
 │   ├── pages/              # Route-level page components
 │   │   ├── Home.tsx
 │   │   └── Docs.tsx
-│   ├── App.tsx             # Router setup
+│   ├── App.tsx             # Router setup + ThemeProvider
 │   ├── main.tsx            # Entry point
-│   └── index.css           # Tailwind config & theme tokens
+│   └── index.css           # Tailwind v4 config & M3/HIG theme tokens
 ├── index.html
 ├── vite.config.ts
 └── package.json

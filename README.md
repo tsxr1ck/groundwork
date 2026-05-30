@@ -1,67 +1,102 @@
-# Groundwork Boilerplate
+# ⚡ Groundwork
 
-A minimal, beautifully designed boilerplate to kickstart your next big idea. 
+> A minimal, opinionated React boilerplate — beautifully configured so you can skip the setup and start building.
 
-Built with:
-- **[Vite](https://vite.dev/)** - Next Generation Frontend Tooling
-- **[React](https://react.dev/)** - A JavaScript library for building user interfaces
-- **[Tailwind CSS (v4)](https://tailwindcss.com/)** - A utility-first CSS framework
-- **[shadcn/ui](https://ui.shadcn.com/)** - Beautifully designed, accessible components
-- **[React Router](https://reactrouter.com/)** - Declarative routing for React
+[![npm version](https://img.shields.io/npm/v/@tsxr1ck/create-groundwork)](https://www.npmjs.com/package/@tsxr1ck/create-groundwork)
 
-## Scaffolding a New Project
+---
 
-You can instantly scaffold a new project anywhere on your computer using `bun create`:
+## Quick Start
+
+Scaffold a new project in seconds:
 
 ```bash
-bun create @tsxr1ck/groundwork my-new-app
-```
-*(Alternatively, you can run `bunx @tsxr1ck/create-groundwork my-new-app` or install the CLI globally via `bun install -g @tsxr1ck/create-groundwork`)*
-
-## Getting Started
-
-First, ensure you have [Bun](https://bun.sh/) installed.
-
-### Install Dependencies
-
-```bash
+bun create @tsxr1ck/groundwork my-app
+cd my-app
 bun install
-```
-
-### Start Development Server
-
-```bash
 bunx --bun vite
 ```
-Then open your browser and visit `http://localhost:5173/`.
 
-### Build for Production
+Or scaffold into the current directory:
 
 ```bash
-bun run build
+mkdir my-app && cd my-app
+bun create @tsxr1ck/groundwork .
 ```
+
+---
+
+## What's Inside
+
+| Tool | Purpose |
+| --- | --- |
+| [Vite](https://vite.dev/) | Lightning-fast dev server & build tool |
+| [React 19](https://react.dev/) | UI library with the React Compiler enabled |
+| [TypeScript](https://www.typescriptlang.org/) | Type safety out of the box |
+| [Tailwind CSS v4](https://tailwindcss.com/) | Utility-first styling |
+| [shadcn/ui](https://ui.shadcn.com/) | Copy-paste accessible components |
+| [React Router](https://reactrouter.com/) | Client-side routing |
+
+---
+
+## Project Structure
+
+```
+├── bin/cli.js              # CLI scaffolding script
+├── src/
+│   ├── components/ui/      # shadcn/ui components (Button, etc.)
+│   ├── lib/                # Utilities (cn helper)
+│   ├── pages/              # Route-level page components
+│   │   ├── Home.tsx
+│   │   └── Docs.tsx
+│   ├── App.tsx             # Router setup
+│   ├── main.tsx            # Entry point
+│   └── index.css           # Tailwind config & theme tokens
+├── index.html
+├── vite.config.ts
+└── package.json
+```
+
+---
+
+## Commands
+
+| Command | Description |
+| --- | --- |
+| `bunx --bun vite` | Start the dev server |
+| `bun run build` | Build for production |
+| `bun run preview` | Preview the production build |
+| `bun run lint` | Run ESLint |
+
+---
 
 ## Adding Components
 
-This boilerplate uses `shadcn/ui` for its component system. You can easily add new components using the CLI:
+This project ships with [shadcn/ui](https://ui.shadcn.com/). Add any component with one command:
 
 ```bash
-bunx --bun shadcn@latest add [component-name]
-```
-
-For example, to add a dialog component:
-
-```bash
+bunx --bun shadcn@latest add button
 bunx --bun shadcn@latest add dialog
+bunx --bun shadcn@latest add card
 ```
 
-## Directory Structure
+Components are added to `src/components/ui/` — they're yours to customize.
 
-- `src/components/ui/` - Contains the `shadcn/ui` components (e.g. Button, Dialog, etc.)
-- `src/pages/` - Contains the page-level components (Home, Docs)
-- `src/App.tsx` - The main application entry point and router setup
-- `src/index.css` - Global CSS containing the Tailwind imports and the theme variables
+---
 
-## Documentation
+## Alternative Install Methods
 
-Once you start the development server, you can view the built-in documentation by clicking "View Documentation" on the landing page, or by navigating directly to `/docs`.
+```bash
+# Using bunx directly
+bunx @tsxr1ck/create-groundwork my-app
+
+# Install the CLI globally
+bun install -g @tsxr1ck/create-groundwork
+create-groundwork my-app
+```
+
+---
+
+## License
+
+MIT

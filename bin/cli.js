@@ -12,7 +12,7 @@ const targetPath = path.resolve(process.cwd(), targetDirName);
 const sourcePath = path.resolve(__dirname, '..');
 
 if (fs.existsSync(targetPath)) {
-  const files = fs.readdirSync(targetPath);
+  const files = fs.readdirSync(targetPath).filter(f => !f.startsWith('.'));
   if (files.length > 0) {
     console.error(`Error: Directory ${targetDirName} already exists and is not empty.`);
     process.exit(1);

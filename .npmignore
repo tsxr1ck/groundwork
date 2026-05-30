@@ -1,2 +1,10 @@
 .git
 node_modules
+src
+public
+vite.config.ts
+tsconfig*.json
+eslint.config.js
+index.html
+_gitignore
+components.json

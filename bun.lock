@@ -9,6 +9,7 @@
         "@tailwindcss/vite": "^4.3.0",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
+        "degit": "^3.3.2",
         "lucide-react": "^1.17.0",
         "radix-ui": "^1.4.3",
         "react": "^19.2.6",
@@ -537,6 +538,8 @@
     "default-browser-id": ["default-browser-id@5.0.1", "", {}, "sha512-x1VCxdX4t+8wVfd1so/9w+vQ4vx7lKd2Qp5tDRutErwmR85OgmfX7RlLRMWafRMY7hbEiXIbudNrjOAPa/hL8Q=="],
 
     "define-lazy-prop": ["define-lazy-prop@3.0.0", "", {}, "sha512-N+MeXYoqr3pOgn8xfyRPREN7gHakLYjhsHhWGT3fWAiL4IkAt0iDw14QiiEm2bE30c5XX5q0FtAA3CK5f9/BUg=="],
+
+    "degit": ["degit@3.3.2", "", { "bin": { "degit": "degit" } }, "sha512-rzktlX74xtTbsH64Iy2rktaCzUejyV70K3DIQ1/GtEHS+8sBaFKEzdEfnDDRy076r9gWGcxsMwOzhYnkWKq1tA=="],
 
     "depd": ["depd@2.0.0", "", {}, "sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw=="],
 

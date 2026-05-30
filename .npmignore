@@ -1,5 +1,7 @@
 .git
 node_modules
+.opencode
+.swarm
 src
 public
 vite.config.ts
